@@ -23,7 +23,10 @@ Steps:
 1. Replace `packages\IllusionLibs.Koikatu.Assembly-CSharp.2019.4.27\lib\net35\Assembly-CSharp.dll` with `<your game directory>\Koikatsu Party VR_Data\Managed\Assembly-CSharp.dll`
 1. Build the project again
 1. It should pass this time
+
 Rebuilding won't overwrite the DLL you replaced, so you only need to do it once.
 
 ## Usage
-The heroine should automatically start kissing when your head is close enough to hers, assuming she has a reasonably sized head. In caress mode, the kissing animation/sound will loop until you move your head away. In all other modes, the kissing effect lasts around 8-10 seconds, and you can start it again by moving your head away and then back. (Will probably fix this.)
+The heroine should automatically start kissing when your head is close enough to hers, assuming she has a reasonably sized head.
+
+In caress mode, the kissing animation/sound will loop until you move your head away. In all other modes, the kissing effect lasts around 8-10 seconds, and you can start it again by moving your head away and then back. (Will probably fix this.)
