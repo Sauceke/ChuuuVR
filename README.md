@@ -15,6 +15,7 @@ Download the DLL from the latest release and move it into `<your game directory>
 Prerequisites:
 * Visual Studio
 * Koikatsu Party VR DLC
+
 Steps:
 1. Clone and open the solution in Visual Studio
 1. Build it
