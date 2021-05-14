@@ -1,6 +1,6 @@
 # ChuuuVR for Koikatsu Party VR
 
-This is a bare-bones plugin for Koikatsu Party VR that introduces kissing. It works basically like a dumbed down version of CyuVR, without the DLC requirement and the compatibility issues mentioned in [MayouKurayami's repo](https://github.com/MayouKurayami/KK_CyuVR). No code has been copied from CyuVR.
+This is a bare-bones plugin for Koikatsu Party VR that introduces kissing. It works basically like a toned down version of CyuVR, without the DLC requirement and the compatibility issues mentioned in [MayouKurayami's repo](https://github.com/MayouKurayami/KK_CyuVR). No code has been copied from CyuVR.
 
 Has some semi-rare random glitches, but I think it's usable enough.
 
