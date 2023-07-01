@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChuuuVR", "ChuuuVR\ChuuuVR.csproj", "{88F0DCCC-E60F-400D-A63A-FB4635AE4D7F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChuuuVR.KK", "ChuuuVR.KK\ChuuuVR.KK.csproj", "{88F0DCCC-E60F-400D-A63A-FB4635AE4D7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChuuuVR.KKS", "ChuuuVR.KKS\ChuuuVR.KKS.csproj", "{CDF25E6E-F6D2-43BD-822E-7080021FCFB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{88F0DCCC-E60F-400D-A63A-FB4635AE4D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88F0DCCC-E60F-400D-A63A-FB4635AE4D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88F0DCCC-E60F-400D-A63A-FB4635AE4D7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDF25E6E-F6D2-43BD-822E-7080021FCFB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDF25E6E-F6D2-43BD-822E-7080021FCFB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDF25E6E-F6D2-43BD-822E-7080021FCFB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDF25E6E-F6D2-43BD-822E-7080021FCFB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

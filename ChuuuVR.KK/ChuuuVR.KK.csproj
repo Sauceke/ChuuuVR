@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net35</TargetFramework>
+        <OutputPath>..\bin\ChuuuVR.KK\BepInEx\plugins\</OutputPath>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <RootNamespace>ChuuuVR</RootNamespace>
+        <DebugSymbols>false</DebugSymbols>
+        <DebugType>none</DebugType>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="IllusionLibs.BepInEx" Version="5.4.20" ExcludeAssets="runtime"/>
+        <PackageReference Include="IllusionLibs.Koikatu.Assembly-CSharp" Version="2019.4.27.4" ExcludeAssets="runtime"/>
+        <PackageReference Include="IllusionLibs.Koikatu.UnityEngine" Version="5.6.2.4" ExcludeAssets="runtime"/>
+        <PackageReference Include="KoikatuCompatibilityAnalyzer" Version="1.1.0" ExcludeAssets="runtime"/>
+        <PackageReference Include="ExtensibleSaveFormat.Koikatu" Version="19.1.0" ExcludeAssets="runtime"/>
+        <PackageReference Include="IllusionModdingAPI.KKAPI" Version="1.35.0" ExcludeAssets="runtime"/>
+    </ItemGroup>
+</Project>
