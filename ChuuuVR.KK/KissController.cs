@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using System.Reflection;
 using HarmonyLib;
+using IllusionUtility.GetUtility;
 using KKAPI.MainGame;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ namespace ChuuuVR
 {
     internal class KissController : GameCustomFunctionController
     {
-        private readonly float thresholdSq = Mathf.Pow(0.05f, 2);
+        private readonly float thresholdSq = Mathf.Pow(0.03f, 2);
         private Transform camera;
         
         protected override void OnStartH(MonoBehaviour proc, HFlag hFlag, bool vr)
@@ -21,6 +22,8 @@ namespace ChuuuVR
                 .FirstOrDefault(type => type.Name == "SteamVR_Render");
             if (renderType == null)
             {
+                ChuuuVRPlugin.Logger.LogError("SteamVR_Render not found.");
+                enabled = false;
                 return;
             }
             camera = Traverse.Create(renderType)
@@ -38,29 +41,30 @@ namespace ChuuuVR
 
         private IEnumerator Run(HFlag hFlag, ChaControl female, int femaleIndex)
         {
-            var femaleHead = female.objHead.transform;
-            var waitForEndOfFrame = new WaitForEndOfFrame();
+            var mouth = female.objHeadBone.transform.FindLoop("cf_J_MouthLow").transform;
             var wait = new WaitForSeconds(0.2f);
             while (true)
             {
-                while (!IsKiss(femaleHead))
+                while (!IsKissing(mouth))
                 {
                     yield return wait;
                 }
-                hFlag.voice.playVoices[femaleIndex] = 101;
                 hFlag.click = HFlag.ClickKind.mouth;
+                hFlag.voice.playVoices[femaleIndex] = 101;
                 hFlag.AddKiss();
-                while (IsKiss(femaleHead))
+                hFlag.DragStart();
+                float startTime = Time.time;
+                while (IsKissing(mouth) && Time.time - startTime < 5f)
                 {
-                    yield return waitForEndOfFrame;
-                    hFlag.click = HFlag.ClickKind.mouth;
+                    yield return wait;
                 }
-                hFlag.click = HFlag.ClickKind.none;
+                hFlag.FinishDrag();
             }
         }
 
-        private bool IsKiss(Transform femaleHead) =>
-            Vector2.SqrMagnitude(femaleHead.position - camera.position) < thresholdSq;
+        private bool IsKissing(Transform mouth) => Vector2
+            .SqrMagnitude(mouth.position - camera.position - camera.rotation * Vector3.down * 0.05f)
+            < thresholdSq;
         
         private static Type[] TryGetTypes(Assembly assembly)
         {
